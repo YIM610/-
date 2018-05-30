@@ -3,8 +3,12 @@
  *
  */
 
-var CANVAS_WIDTH = document.getElementsByTagName("body")[0].offsetWidth,
-    CANVAS_HEIGHT = document.getElementsByTagName("body")[0].offsetHeight,
+let pl = null;
+let tg = null;
+let game = null;
+let requstAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+let CANVAS_WIDTH = document.body.offsetWidth,
+    CANVAS_HEIGHT = document.body.offsetHeight,
     KEY_CODES = {
         37: "left",
         38: "up",
@@ -16,6 +20,10 @@ var CANVAS_WIDTH = document.getElementsByTagName("body")[0].offsetWidth,
         "up": false,
         "right": false,
         "down": false
+    },
+    COST = {
+        hor: 10,
+        ob: 14
     },
     MAP = {
         arr: [],                       //地图矩阵
